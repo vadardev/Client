@@ -1,0 +1,7 @@
+{
+  "name": "ewone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
