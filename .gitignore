@@ -62,6 +62,8 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+/android
+/.vscode
 
 # System files
 .DS_Store

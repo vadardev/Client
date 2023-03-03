@@ -6,6 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
+import { DictionaryTab } from '../pages/dictionary/dictionary.page';
+import { ProfileTab } from '../pages/profile/profile.page';
+import { AddCardPage } from '../pages/add-card/add-card.page';
+import { ShowDefaultCardPage } from '../pages/show-default-card/show-default-card.page';
 
 @NgModule({
   imports: [
@@ -14,6 +18,6 @@ import { TabsPage } from './tabs.page';
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, DictionaryTab, ProfileTab, ShowDefaultCardPage]
 })
 export class TabsPageModule {}

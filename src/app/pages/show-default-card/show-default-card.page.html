@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="Back"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-item-group>
+        <ion-item-divider color="light">
+            <ion-label>word</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none">
+            <p><b>{{word}}</b></p>
+        </ion-item>
+        <ion-item-divider color="light">
+            <ion-label>definition</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none">
+            <p>{{definition}}</p>
+        </ion-item>
+        <ion-item-divider color="light" *ngIf="withExample">
+            <ion-label>example</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none" *ngIf="example">
+            <p>{{example}}</p>
+        </ion-item>
+        <ion-item lines="none" *ngIf="otherExample">
+            <p>{{otherExample}}</p>
+        </ion-item>
+        <ion-item-divider color="light" *ngIf="pictureUrl">
+            <ion-label>image</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none" *ngIf="pictureUrl">
+            <p>
+                <ion-img src={{pictureUrl}}></ion-img>
+            </p>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

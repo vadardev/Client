@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="Back"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="save()">
+                <ion-icon name="save-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-item-group>
+        <ion-item-divider color="light">
+            <ion-label>word</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none">
+            <ion-input required type="text" placeholder="enter word" [(ngModel)]="word"></ion-input>
+            <!-- <p><b>{{word}}</b></p> -->
+        </ion-item>
+        <ion-item-divider color="light">
+            <ion-label>definition</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none">
+            <ion-textarea [autoGrow]="true" placeholder="enter definition" [(ngModel)]="definition"></ion-textarea>
+            <!-- <p>{{definition}}</p> -->
+        </ion-item>
+        <ion-item-divider color="light">
+            <ion-label>example</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none">
+            <ion-textarea [autoGrow]="true" placeholder="enter example" [(ngModel)]="example"></ion-textarea>
+            <!-- <p>{{example}}</p> -->
+        </ion-item>
+        <ion-item lines="none" *ngIf="example">
+            <ion-textarea [autoGrow]="true" placeholder="enter other example" [(ngModel)]="otherExample"></ion-textarea>
+            <!-- <p>{{otherExample}}</p> -->
+        </ion-item>
+        <ion-item-divider color="light">
+            <ion-label>image</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none">
+            <ion-input required type="text" placeholder="enter image url (.png/.jpg)" class="custom" [(ngModel)]="pictureUrl"></ion-input>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

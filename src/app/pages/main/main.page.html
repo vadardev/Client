@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            3/50
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-button routerLink="/learn">
+                <ion-icon name="school-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="addCard()">
+                <ion-icon name="duplicate-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list *ngIf="!isUserAuthenticated">
+        <ion-item *ngFor="let item of defaultCards;" button detail="true" [routerLink]="['/show-default-card', item.cardId]">
+            <ion-label>
+                <h2>{{item.word}}</h2>
+                <p>
+                    {{item.definition}}
+                </p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="isUserAuthenticated">
+        <ion-item *ngFor="let item of userCards;" button detail="true" (click)="showUserCard(item.userCardId)">
+            <ion-label>
+                <h2>{{item.word}}</h2>
+                <p>
+                    {{item.definition}}
+                </p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
